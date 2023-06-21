@@ -146,6 +146,28 @@ public class indexTimeController
     {
         return Service.GetAllIndexTime();
     }
+    
+    @CrossOrigin
+    @PostMapping("/login")
+    public login login(@RequestBody user user)
+    {
+        user u = service.GetUserByName(user.getUsername());
+        if(u == null)
+        {
+            return new login(401,0);
+        }
+        else
+        {
+            if(u.getPassword().equals(user.getPassword()))
+            {
+                return new login(200,u.getId());
+            }
+            else
+            {
+                return new login(400,0);
+            }
+        }
+    }
 }
 ```
 
@@ -154,6 +176,8 @@ public class indexTimeController
 使用@GetMapping进行设置
 
 需要使用@CrossOrigin来设置允许跨域访问
+
+当使用post方法时 使用@RequestBody接收参数
 
 ------
 
