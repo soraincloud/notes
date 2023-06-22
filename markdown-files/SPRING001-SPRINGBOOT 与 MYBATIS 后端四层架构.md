@@ -41,15 +41,15 @@ public class indexTime
 }
 ```
 
-@Data 表示这是用来装数据的实体类 使用了lombok简化了代码 省略了setter和getter方法
+**@Data** 表示这是用来装数据的实体类 使用了 **lombok** 简化了代码 省略了 **setter** 和 **getter** 方法
 
 ------
 
 ## 2.Mapper
 
-Mapper就相当于DAO层 主要实现对数据库的操作部分
+**Mapper** 就相当于 **DAO** 层 主要实现对数据库的操作部分
 
-这里使用纯注解的方式 直接将SQL语句封装在了Mapper中
+这里使用纯注解的方式 直接将 **SQL** 语句封装在了 **Mapper** 中
 
 ```java
 import com.spring.back_springboot.pojo.indexTime;
@@ -65,7 +65,7 @@ public interface indexTimeMapper
 }
 ```
 
-@Mapper 注解时mybatis注解 表示这是一个Mapper类
+**@Mapper** 注解时 **mybatis** 注解 表示这是一个 **Mapper** 类
 
 这里只举了一个查询所有内容的例子
 
@@ -73,7 +73,7 @@ public interface indexTimeMapper
 
 ## 3.1.Service
 
-先创建Service的接口
+先创建 **Service** 的接口
 
 ```java
 import com.spring.back_springboot.pojo.indexTime;
@@ -89,7 +89,7 @@ public interface indexTimeService
 
 ## 3.2.ServiceImpl
 
-这是Service层的实现类 它继承Service接口
+这是 **Service** 层的实现类 它继承 **Service** 接口
 
 ```java
 import com.spring.back_springboot.mapper.indexTimeMapper;
@@ -114,9 +114,9 @@ public class indexTimeServiceImpl implements indexTimeService
 }
 ```
 
-@Service需要写在实现类的前面
+**@Service** 需要写在实现类的前面
 
-@Autowired可以自动注入需要的内容
+**@Autowired** 可以自动注入需要的内容
 
 ------
 
@@ -173,11 +173,11 @@ public class indexTimeController
 
 将方法映射在接口上
 
-使用@GetMapping进行设置
+使用 **@GetMapping** 进行设置
 
-需要使用@CrossOrigin来设置允许跨域访问
+需要使用 **@CrossOrigin** 来设置允许跨域访问
 
-当使用post方法时 使用@RequestBody接收参数
+当使用 **post** 方法时 使用 **@RequestBody** 接收参数
 
 ------
 
