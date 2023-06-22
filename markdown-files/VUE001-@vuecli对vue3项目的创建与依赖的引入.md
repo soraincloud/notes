@@ -105,7 +105,7 @@ module.exports = defineConfig({
 
 ```js
 transpileDependencies: true,
-  lintOnSave:false,  //不适用驼峰命名检测
+  lintOnSave:false,  //不使用驼峰命名检测
   publicPath: '/',
   outputDir: 'dist',
   assetsDir:"statics",
