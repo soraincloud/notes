@@ -116,6 +116,64 @@ export default createStore({
 
 ```
 
+**<!> 使用modules包装vuex js文件**
+
+store 的 main 文件
+
+```js
+import { createStore } from 'vuex'
+
+import user from "@/store/modules/user"
+
+export default createStore({
+  state:{},
+  getters:{},
+  mutations:{},
+  actions:{},
+  modules: 
+  {
+    user,
+  }
+})
+```
+
+需要引入的 js 文件
+
+```js
+export default
+{
+    state:
+    {
+        username: '',
+        //声明变量和初始化
+    },
+    getters:
+    {
+        getUsername(state)
+        {
+            return state.username;
+        },
+        //类似getter方法
+    },
+    mutations:
+    {
+        setUsername(state,username)
+        {
+            state.username = username;
+        },
+        //类似setter方法
+    },
+}
+```
+
+组件中的使用
+
+```js
+_this.$store.commit('setUsername',resp.data.username) //设值
+
+this.$store.getters.getUsername //取值
+```
+
 ------
 
 # 没了，你居然看完了 Σ(っ °Д °;)っ
